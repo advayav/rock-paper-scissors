@@ -16,21 +16,26 @@ function getHumanChoice() {
 }
 
 
-
 function playGame() {
     let humanScore = 0
     let computerScore = 0
 
-    for (let i = 0; i < 5; i++) {
-        console.log("Round number " + (i+1))
-        const humanChoice = getHumanChoice()
-        const computerChoice = getComputerChoice()
-        console.log("Your choice: " + humanChoice)
-        console.log("Computer choice: " + computerChoice)
-        playRound(humanChoice, computerChoice)
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     console.log("Round number " + (i+1))
+    //     const humanChoice = getHumanChoice()
+    //     const computerChoice = getComputerChoice()
+    //     console.log("Your choice: " + humanChoice)
+    //     console.log("Computer choice: " + computerChoice)
+    //     playRound(humanChoice, computerChoice)
+    // }
+
+    const selection = document.querySelectorAll("button")
+
+    selection.forEach(button => button.addEventListener("click", () => playRound(button.id, getComputerChoice())))
 
     function playRound(humanChoice, computerChoice) {
+            console.log("Your choice: " + humanChoice)
+            console.log("Computer choice: " + computerChoice)
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
             console.log("It's a tie!")
@@ -71,18 +76,21 @@ function playGame() {
     
 }
 
-console.log("Scores:")
-console.log("Computer Score: " + computerScore)
-console.log("Your Score: " + humanScore)
+// console.log("Scores:")
+// console.log("Computer Score: " + computerScore)
+// console.log("Your Score: " + humanScore)
 
-if (computerScore > humanScore) {
-    console.log("You lose :(")
-} else if (computerScore < humanScore) {
-    console.log("You win!!")
-} else {
-    console.log("It's a tie!")
-}
+// if (computerScore > humanScore) {
+//     console.log("You lose :(")
+// } else if (computerScore < humanScore) {
+//     console.log("You win!!")
+// } else {
+//     console.log("It's a tie!")
+// }
 
 }
 
 playGame()
+// document.addEventListener("DOMContentLoaded", () => {
+//     playGame()
+// })
