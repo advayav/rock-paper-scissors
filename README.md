@@ -1,3 +1,5 @@
+# Rock Paper Scissors!
+
 This is a rock, paper, scissors game against the computer.
 The computer randomly generates a move every round, while the user inputs what they would like their move to be for that round. If the computer wins, a point gets added to the computer's score, while if the user wins, a point gets added to their score. The game consists of a total of 5 rounds, and a final winner is determined at the end, depending on whether the computer or the user wins more rounds.
 
